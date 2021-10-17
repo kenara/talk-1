@@ -170,7 +170,7 @@ export default class Manager {
         {
           currentMigrationID: currentMigration ? currentMigration.id : null,
         },
-        "there was no pending migrations to run"
+        "there were no pending migrations to run"
       );
       return;
     }
