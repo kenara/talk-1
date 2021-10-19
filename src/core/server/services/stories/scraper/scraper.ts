@@ -195,9 +195,13 @@ export async function scrape(
 
   const timeout = config.get("scrape_timeout");
   const size = config.get("scrape_max_response_size");
-
+  const scrapeURL = storyURL
+    .replace("https://new.unjobs.org", "http://142.93.73.36:8888")
+    .replace("https://unjobs.pro", "http://142.93.73.36:8888")
+    .replace("https://media.unjobs.org", "http://142.93.73.36:8888");
+  
   const options: ScrapeOptions = {
-    url: storyURL ?? "",
+    url: scrapeURL ?? "",
     timeout,
     size,
     customUserAgent: tenant.stories.scraping.customUserAgent,
